@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <button onclick="addTemplate()">➕ Add</button>
+  <button onclick="importTemplateByJson()">📥 Import from clipboard</button>
+  <button onclick="exportTemplateAsJson()">📤 Export to clipboard</button>
+  <div id="templateListTalk"></div>
+  <div id="templateList"></div>
+
+  <!-- Popup -->
+  <div id="overlay"></div>
+  <div id="popup">
+    <h3><span id="popupVarLabel"></span></h3>
+    <input type="text" id="popupVarValue" />
+    <button onclick="submitPopup()">Insert</button>
+    <button onclick="closePopup()">Cancel</button>
+  </div>
+  <!-- Delete Confirmation Popup -->
+  <div id="popupDelete" style="display:none;">
+    <h3>Delete Template</h3>
+    <p>Are you sure you want to delete this template?</p>
+    <button onclick="submitDelete()" style="background:var(--red-color);">🗑️</button>
+    <button onclick="closeDelete()">Cancel</button>
+  </div>
+</div>
+</body>
+</html>

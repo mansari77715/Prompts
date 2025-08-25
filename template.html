@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <h3>🔍 Selecte Variables</h3>
+  <textarea id="selectedTemplate" readonly style="overflow:hidden; resize:none;"></textarea>
+  <div id="varButtons" class="var-buttons"></div>
+
+  <h4>📝 Final Prompt:</h4>
+  <textarea id="finalPrompt" readonly onclick="copyFinalPrompt()" style="overflow:hidden; resize:none;"></textarea>
+  <div id="copyMessage">✅ Copied to clipboard!</div>
+
+  <!-- Popup -->
+  <div id="overlay"></div>
+  <div id="popup">
+    <h3>Enter Value for <span id="popupVarLabel"></span></h3>
+    <input type="text" id="popupVarValue" />
+    <button onclick="submitPopup()">Insert</button>
+    <button onclick="closePopup()">Cancel</button>
+  </div>
+</div>
+</body>
+</html>
