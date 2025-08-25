@@ -7,6 +7,7 @@
   // Load templates from cookie on page load
   window.onload = function () {
     pn = window.location.pathname.split("/");
+    console.log(pn)
     switch (pn) 
     {
         case "template.html":
