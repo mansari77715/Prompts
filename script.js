@@ -6,10 +6,10 @@
 
   // Load templates from cookie on page load
   window.onload = function () {
-
-    switch (window.location.pathname) 
+    pn = window.location.pathname.split("/");
+    switch (pn) 
     {
-        case "/template.html":
+        case "template.html":
             const template = new URLSearchParams(window.location.search).get("t");
             //document.getElementById("selectedTemplate").value = template;
             setTextarea(document.getElementById("selectedTemplate"), template);
@@ -18,10 +18,11 @@
             //document.getElementById("finalPrompt").value = template;
             setTextarea(document.getElementById("finalPrompt"), template);
             break;
-        case "/add.html":
+        case "add.html":
             templates = JSON.parse(decodeURIComponent(document.cookie.split('; ').find(row => row.startsWith('templates=')).split('=')[1]));
             break;
-        case "/index.html":
+        case "":
+        case "index.html":
             const cookie = document.cookie.split('; ').find(row => row.startsWith('templates='));
             if (cookie) {
             try {
