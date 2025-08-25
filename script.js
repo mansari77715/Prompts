@@ -7,8 +7,8 @@
   // Load templates from cookie on page load
   window.onload = function () {
     pn = window.location.pathname.split("/");
-    console.log(pn)
-    switch (pn) 
+    console.log(pn.at(-1))
+    switch (pn.at(-1)) 
     {
         case "template.html":
             const template = new URLSearchParams(window.location.search).get("t");
